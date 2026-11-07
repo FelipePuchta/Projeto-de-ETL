@@ -1,0 +1,18 @@
+# Ambiente e cache Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Arquivos locais
+.DS_Store
+.env
+.env.*
+!.env.example
+.vscode/
+
+# Saídas geradas
+banco/*.db
+banco/*.sqlite
+banco/*.sqlite3
+dados/tratados/*.csv
