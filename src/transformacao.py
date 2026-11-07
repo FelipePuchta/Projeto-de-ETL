@@ -1,5 +1,4 @@
 import pandas as pd
-import extracao
 
 class Transformacao:
     def __init__(self, df):
