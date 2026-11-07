@@ -1,2 +1,2 @@
 # Projeto-de-ETL-na-rea-m-dica
-Projeto que realiza a extração de uma planilha com informações de milhares de pacientes, a validação e o salvamento de um novo arquivo validado.
+Pipeline ETL em Python para extração, limpeza e validação de dados sintéticos de milhares de atendimentos de pacientes, com exportação de um arquivo tratado para análise.
