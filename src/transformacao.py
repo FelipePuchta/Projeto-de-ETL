@@ -3,7 +3,24 @@ import pandas as pd
 class Transformacao:
     def __init__(self, df):
         self.df = df.copy()
+        self.dados_originais = df.copy() # Preserva os valores antes do tratamento.
+        self.problemas = pd.DataFrame(
+            columns=['id_atendimento', 'campo', 'valor_original', 'problema']
+        )
         
+    def registrar_problemas(self, mascara, campo, problema):
+        """Acrescenta ao relatório os atendimentos que apresentam um problema"""
+        registros = self.df.loc[mascara, ['id_atendimento']].copy()
+        if registros.empty:
+            return
+
+        registros['campo'] = campo
+        registros['valor_original'] = self.dados_originais.loc[registros.index, campo].astype('object')
+        registros['problema'] = problema
+        self.problemas = pd.concat([self.problemas, registros], ignore_index=True)
+        # Evita repetir o mesmo problema quando uma validação é chamada novamente.
+        self.problemas = self.problemas.drop_duplicates(ignore_index=True)
+
     def diagnosticar(self):
         """Essa função realiza um diganóstico geral sobre
         o arquivo analisado. Mostrando coisas como: duplicatas, 
@@ -32,7 +49,8 @@ class Transformacao:
         """Converte as três colunas de datas, aceitando os dois formatos da base."""
         colunas = ['data_hora_chegada', 'data_hora_inicio_atendimento', 'data_hora_saida'] # Aqui eu defini as colunas que serão convertidas
         for coluna in colunas:
-            original = self.df[coluna]
+            # Usa o texto original também quando a transformação é executada novamente.
+            original = self.dados_originais.loc[self.df.index, coluna]
             convertida = pd.to_datetime(
                 original,
                 format="%Y-%m-%d %H:%M:%S",
@@ -42,16 +60,26 @@ class Transformacao:
                 original.loc[faltantes],
                 format="%d/%m/%Y %H:%M:%S",
                 errors="coerce")
+
+            invalidas = original.notna() & convertida.isna()
+            self.registrar_problemas(invalidas, coluna, 'data inválida')
+            self.registrar_problemas(original.isna(), coluna, 'data ausente')
             self.df[coluna] = convertida
 
     def validar_idades(self):
-        """Essa função irá garantir que pacientes com idades corretas
-        passem"""
-        invalidas = (self.df['idade'] < 0) | (self.df['idade'] > 100)
-        contagem_de_invalidas = sum(invalidas)
+        """Trata idades inválidas como ausentes, sem remover atendimentos"""
+        idades = pd.to_numeric(self.df['idade'], errors='coerce')
+
+        textos_invalidos = self.df['idade'].notna() & idades.isna()
+        fora_do_intervalo = (idades < 0) | (idades > 100)
+        fracionarias = (idades % 1 != 0) & idades.notna()
+
+        invalidas = textos_invalidos | fora_do_intervalo | fracionarias
+        contagem_de_invalidas = invalidas.sum()
         print(f"Quantidade de idades inválidas: {contagem_de_invalidas}")
-        self.df.loc[invalidas, 'idade'] = float('nan')
-        self.df['idade'] = self.df['idade'].astype('Int64')
+        self.registrar_problemas(invalidas, 'idade', 'idade inválida')
+        idades.loc[invalidas] = float('nan')
+        self.df['idade'] = idades.astype('Int64')
     
     def validar_cronologia(self):
         """Sinaliza datas ausentes ou fora de ordem, sem remover os registros"""
@@ -62,6 +90,11 @@ class Transformacao:
         self.df['cronologia_valida'] = datas_presentes & inicio_valido & saida_valida
         quantidade_invalidas = (~self.df['cronologia_valida']).sum()
         print(f"Quantidade de cronologias inválidas: {quantidade_invalidas}")
+
+        inicio_anterior = self.df['data_hora_inicio_atendimento'] < self.df['data_hora_chegada']
+        saida_anterior = self.df['data_hora_saida'] < self.df['data_hora_inicio_atendimento']
+        self.registrar_problemas(inicio_anterior, 'data_hora_inicio_atendimento', 'início antes à chegada')
+        self.registrar_problemas(saida_anterior, 'data_hora_saida', 'saída antes do início do atendimento')
 
     def calcular_tempos(self):
         """Calcula espera e permanência em minutos apenas para cronologias válidas"""

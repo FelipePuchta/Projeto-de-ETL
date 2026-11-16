@@ -10,6 +10,8 @@ def main():
     caminho_csv = raiz / 'dados' / 'brutos' / 'atendimentos.csv'
     caminho_do_banco = raiz / 'banco' / 'atendimentos.db'
     caminho_do_banco.parent.mkdir(parents=True, exist_ok=True)
+    caminho_relatorio = raiz / 'resultados' / 'relatorio_qualidade.csv'
+    caminho_relatorio.parent.mkdir(parents=True, exist_ok=True)
 
     print("Iniciando a extração dos dados...")
     arquivo = Extracao(caminho_csv)
@@ -23,8 +25,12 @@ def main():
     carga = SalvarDf(df_tratado, caminho_do_banco)
     carga.salvar_sqlite()
 
+    print("Salvando o relatório de qualidade...")
+    carga.salvar_relatorio(transformacao.problemas, caminho_relatorio)
+
     print(f"ETL concluído! Quantidade de atendimentos: {len(df_tratado)}")
     print(f"Banco salvo em: {caminho_do_banco}")
+    print(f"Relatório salvo em: {caminho_relatorio}")
 
 
 if __name__ == "__main__":
