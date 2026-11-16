@@ -5,4 +5,4 @@ Pipeline ETL em Python para extração, limpeza e validação de dados sintétic
 O código lê um arquivo, que está no formato csv, salvando-o como um DataFrame Pandas. Após esse processo, o df passa por diversos métodos, a fim de ser tratado. No fim, o arquivo tratado é salvo. Após todo esse processo, salvamos o arquivo no SQLite, em que realizamos 10 queries, que respondem diversos tópicos do nosso material de estudo.
 
 # Propósito
-O propósito desse projeto é praticar a técnica ETL, visando desenvolver boas práticas
+O propósito desse projeto é praticar a técnica ETL, visando desenvolver boas práticas.
