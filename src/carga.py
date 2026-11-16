@@ -17,3 +17,8 @@ class SalvarDf:
             print("DataFrame salvo!")
         finally:
             conexao.close()
+
+    def salvar_relatorio(self, problemas, caminho_relatorio):
+        """Salva em CSV os problemas encontrados durante o tratamento"""
+        problemas.to_csv(caminho_relatorio, index=False, encoding='utf-8')
+        print(f"Relatório salvo! Quantidade de problemas: {len(problemas)}")

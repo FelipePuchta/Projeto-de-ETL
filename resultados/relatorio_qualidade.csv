@@ -1,0 +1,101 @@
+id_atendimento,campo,valor_original,problema
+ATD002782,idade,150.0,idade inválida
+ATD005851,idade,150.0,idade inválida
+ATD006677,idade,150.0,idade inválida
+ATD007494,idade,150.0,idade inválida
+ATD008357,idade,150.0,idade inválida
+ATD001077,idade,150.0,idade inválida
+ATD004565,idade,150.0,idade inválida
+ATD000790,idade,150.0,idade inválida
+ATD002449,idade,150.0,idade inválida
+ATD008837,idade,150.0,idade inválida
+ATD004076,idade,150.0,idade inválida
+ATD008319,idade,150.0,idade inválida
+ATD007633,idade,150.0,idade inválida
+ATD007033,idade,150.0,idade inválida
+ATD001132,idade,150.0,idade inválida
+ATD006893,idade,150.0,idade inválida
+ATD001060,idade,150.0,idade inválida
+ATD009838,idade,150.0,idade inválida
+ATD001644,idade,150.0,idade inválida
+ATD001876,idade,150.0,idade inválida
+ATD005299,idade,150.0,idade inválida
+ATD006552,idade,150.0,idade inválida
+ATD000616,idade,150.0,idade inválida
+ATD003486,idade,150.0,idade inválida
+ATD001339,idade,150.0,idade inválida
+ATD007005,idade,150.0,idade inválida
+ATD006479,idade,150.0,idade inválida
+ATD006269,idade,150.0,idade inválida
+ATD004299,idade,150.0,idade inválida
+ATD003419,idade,150.0,idade inválida
+ATD003808,idade,150.0,idade inválida
+ATD002953,idade,150.0,idade inválida
+ATD009928,idade,150.0,idade inválida
+ATD006543,idade,150.0,idade inválida
+ATD007917,idade,150.0,idade inválida
+ATD000455,idade,150.0,idade inválida
+ATD009080,idade,150.0,idade inválida
+ATD008915,idade,150.0,idade inválida
+ATD009101,idade,150.0,idade inválida
+ATD004246,idade,150.0,idade inválida
+ATD008128,idade,150.0,idade inválida
+ATD007378,idade,150.0,idade inválida
+ATD001892,idade,150.0,idade inválida
+ATD007180,idade,150.0,idade inválida
+ATD005932,idade,150.0,idade inválida
+ATD007210,idade,150.0,idade inválida
+ATD001265,idade,150.0,idade inválida
+ATD002728,idade,150.0,idade inválida
+ATD007941,idade,150.0,idade inválida
+ATD003756,idade,150.0,idade inválida
+ATD003621,data_hora_saida,2025-01-06 08:20:45,saída anterior ao início do atendimento
+ATD003433,data_hora_saida,2025-01-31 21:22:11,saída anterior ao início do atendimento
+ATD004121,data_hora_saida,2025-04-14 06:43:28,saída anterior ao início do atendimento
+ATD008676,data_hora_saida,2025-03-15 02:18:07,saída anterior ao início do atendimento
+ATD007964,data_hora_saida,2025-03-06 16:19:01,saída anterior ao início do atendimento
+ATD003857,data_hora_saida,2025-01-26 09:03:40,saída anterior ao início do atendimento
+ATD007169,data_hora_saida,2025-02-03 12:34:53,saída anterior ao início do atendimento
+ATD001286,data_hora_saida,2025-02-17 11:48:37,saída anterior ao início do atendimento
+ATD006674,data_hora_saida,2025-03-03 12:09:29,saída anterior ao início do atendimento
+ATD003600,data_hora_saida,2025-01-31 11:36:01,saída anterior ao início do atendimento
+ATD003682,data_hora_saida,2025-04-26 09:23:05,saída anterior ao início do atendimento
+ATD003030,data_hora_saida,2025-03-28 07:46:14,saída anterior ao início do atendimento
+ATD009266,data_hora_saida,2025-05-08 07:31:11,saída anterior ao início do atendimento
+ATD000164,data_hora_saida,2025-04-04 03:53:27,saída anterior ao início do atendimento
+ATD001285,data_hora_saida,2025-02-27 11:21:58,saída anterior ao início do atendimento
+ATD004534,data_hora_saida,2025-02-08 16:07:47,saída anterior ao início do atendimento
+ATD006623,data_hora_saida,2025-04-19 05:57:02,saída anterior ao início do atendimento
+ATD009681,data_hora_saida,2025-04-25 09:47:24,saída anterior ao início do atendimento
+ATD000893,data_hora_saida,2025-05-21 15:40:10,saída anterior ao início do atendimento
+ATD000951,data_hora_saida,2025-01-26 10:17:07,saída anterior ao início do atendimento
+ATD008867,data_hora_saida,2025-05-27 10:26:54,saída anterior ao início do atendimento
+ATD002495,data_hora_saida,2025-06-19 13:01:42,saída anterior ao início do atendimento
+ATD007106,data_hora_saida,2025-02-06 08:58:13,saída anterior ao início do atendimento
+ATD006931,data_hora_saida,2025-04-14 13:17:47,saída anterior ao início do atendimento
+ATD004606,data_hora_saida,2025-06-17 10:33:39,saída anterior ao início do atendimento
+ATD004405,data_hora_saida,2025-06-09 16:56:06,saída anterior ao início do atendimento
+ATD001056,data_hora_saida,2025-01-14 10:49:36,saída anterior ao início do atendimento
+ATD009130,data_hora_saida,2025-01-14 16:58:44,saída anterior ao início do atendimento
+ATD006871,data_hora_saida,2025-06-13 01:21:03,saída anterior ao início do atendimento
+ATD004162,data_hora_saida,2025-06-26 16:47:22,saída anterior ao início do atendimento
+ATD001683,data_hora_saida,2025-03-21 01:30:23,saída anterior ao início do atendimento
+ATD001124,data_hora_saida,2025-01-15 15:15:32,saída anterior ao início do atendimento
+ATD005581,data_hora_saida,2025-03-13 17:28:46,saída anterior ao início do atendimento
+ATD002447,data_hora_saida,2025-05-20 09:04:45,saída anterior ao início do atendimento
+ATD002704,data_hora_saida,2025-06-25 17:54:30,saída anterior ao início do atendimento
+ATD006586,data_hora_saida,2025-02-07 18:57:51,saída anterior ao início do atendimento
+ATD008750,data_hora_saida,2025-06-26 20:01:31,saída anterior ao início do atendimento
+ATD004580,data_hora_saida,2025-06-23 18:48:10,saída anterior ao início do atendimento
+ATD007324,data_hora_saida,2025-01-10 17:10:15,saída anterior ao início do atendimento
+ATD007699,data_hora_saida,2025-01-06 20:04:19,saída anterior ao início do atendimento
+ATD003222,data_hora_saida,2025-01-14 06:44:39,saída anterior ao início do atendimento
+ATD000875,data_hora_saida,2025-02-17 12:43:27,saída anterior ao início do atendimento
+ATD002833,data_hora_saida,2025-03-23 12:46:11,saída anterior ao início do atendimento
+ATD004729,data_hora_saida,2025-06-12 08:46:10,saída anterior ao início do atendimento
+ATD004840,data_hora_saida,2025-05-11 04:36:31,saída anterior ao início do atendimento
+ATD004518,data_hora_saida,2025-05-19 16:34:30,saída anterior ao início do atendimento
+ATD005818,data_hora_saida,2025-01-20 15:17:14,saída anterior ao início do atendimento
+ATD000701,data_hora_saida,2025-03-21 11:55:57,saída anterior ao início do atendimento
+ATD004602,data_hora_saida,2025-01-22 07:03:51,saída anterior ao início do atendimento
+ATD003170,data_hora_saida,2025-03-21 12:36:58,saída anterior ao início do atendimento
